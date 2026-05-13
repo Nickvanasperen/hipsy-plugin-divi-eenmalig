@@ -1,0 +1,198 @@
+/* Hipsy Divi Modules CSS */
+
+/* ═══════════════════════════════════════
+   EVENT TICKET BUTTON
+   ═══════════════════════════════════════ */
+.hipsy-ticket-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Button Sizes */
+.hipsy-btn-small {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.hipsy-btn-medium {
+    padding: 12px 24px;
+    font-size: 16px;
+}
+
+.hipsy-btn-large {
+    padding: 16px 32px;
+    font-size: 18px;
+}
+
+.hipsy-btn-fullwidth {
+    display: block;
+    width: 100%;
+}
+
+/* Button Styles */
+.hipsy-btn-primary {
+    background: #7c3aed;
+    color: white;
+    border: 2px solid #7c3aed;
+}
+
+.hipsy-btn-primary:hover {
+    background: #6d28d9;
+    border-color: #6d28d9;
+    color: white;
+}
+
+.hipsy-btn-secondary {
+    background: #10b981;
+    color: white;
+    border: 2px solid #10b981;
+}
+
+.hipsy-btn-secondary:hover {
+    background: #059669;
+    border-color: #059669;
+    color: white;
+}
+
+.hipsy-btn-outline {
+    background: transparent;
+    color: #7c3aed;
+    border: 2px solid #7c3aed;
+}
+
+.hipsy-btn-outline:hover {
+    background: #7c3aed;
+    color: white;
+}
+
+/* ═══════════════════════════════════════
+   EVENT MODULES
+   ═══════════════════════════════════════ */
+.hipsy-event-titel a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.hipsy-event-titel a:hover {
+    color: #7c3aed;
+}
+
+.hipsy-event-datum,
+.hipsy-event-tijd,
+.hipsy-event-locatie {
+    margin: 10px 0;
+}
+
+.hipsy-icon {
+    margin-right: 6px;
+}
+
+.hipsy-event-locatie a {
+    color: #7c3aed;
+    text-decoration: none;
+}
+
+.hipsy-event-locatie a:hover {
+    text-decoration: underline;
+}
+
+.hipsy-event-afbeelding img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hipsy-read-more {
+    color: #7c3aed;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hipsy-read-more:hover {
+    text-decoration: underline;
+}
+
+/* ═══════════════════════════════════════
+   TICKET INFO
+   ═══════════════════════════════════════ */
+.hipsy-event-tickets {
+    margin: 20px 0;
+}
+
+.tickets-title {
+    margin-bottom: 15px;
+}
+
+/* List Layout */
+.tickets-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tickets-list .ticket-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.tickets-list .ticket-item:last-child {
+    border-bottom: none;
+}
+
+.ticket-price {
+    font-weight: 600;
+    color: #10b981;
+}
+
+/* Table Layout */
+.tickets-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tickets-table th,
+.tickets-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.tickets-table th {
+    background: #f9fafb;
+    font-weight: 600;
+}
+
+/* Cards Layout */
+.tickets-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.ticket-card {
+    padding: 20px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.ticket-card .ticket-name {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.ticket-card .ticket-price {
+    font-size: 18px;
+    color: #10b981;
+    margin-bottom: 8px;
+}
+
+.ticket-card .ticket-status {
+    font-size: 14px;
+}
