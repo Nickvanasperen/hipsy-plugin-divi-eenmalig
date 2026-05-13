@@ -12,10 +12,19 @@ function hipsy_events_builder_load_divi_modules() {
         return;
     }
 
-    $events_grid = HIPSY_EVENTS_BUILDER_PATH . 'integrations/divi/modules/events-grid/EventsGrid.php';
+    $modules = array(
+        'integrations/divi/modules/events-grid/EventsGrid.php',
+        'integrations/divi/modules/event-title/EventTitle.php',
+        'integrations/divi/modules/event-date/EventDate.php',
+        'integrations/divi/modules/event-time/EventTime.php',
+        'integrations/divi/modules/event-location/EventLocation.php',
+    );
 
-    if ( file_exists( $events_grid ) ) {
-        require_once $events_grid;
+    foreach ( $modules as $module ) {
+        $file = HIPSY_EVENTS_BUILDER_PATH . $module;
+        if ( file_exists( $file ) ) {
+            require_once $file;
+        }
     }
 }
 add_action( 'et_builder_ready', 'hipsy_events_builder_load_divi_modules' );
