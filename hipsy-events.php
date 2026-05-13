@@ -20,6 +20,10 @@
 // CORE INCLUDES - Basis functionaliteit (altijd actief)
 // ══════════════════════════════════════════════════════
 
+if ( file_exists( plugin_dir_path(__FILE__) . 'includes/admin/admin.php' ) ) {
+    include_once plugin_dir_path(__FILE__) . 'includes/admin/admin.php';
+}
+
 // Helpers
 if ( file_exists( plugin_dir_path(__FILE__) . 'includes/helpers.php' ) ) {
     include_once plugin_dir_path(__FILE__) . "includes/helpers.php";
@@ -40,14 +44,12 @@ if ( file_exists( __DIR__ . "/templates/loopItem.php" ) ) include(__DIR__ . "/te
 if ( file_exists( __DIR__ . "/functions/styles.php" ) ) include(__DIR__ . "/functions/styles.php");
 if ( file_exists( __DIR__ . "/functions/displayEventsShortcode.php" ) ) include(__DIR__ . "/functions/displayEventsShortcode.php");
 
-// Oude shortcodes ALLEEN laden als v4.0 NIET enabled is
-// (v4.0 heeft eigen extended shortcodes)
 if ( ! get_option('hipsy_events_v4_enabled', 0) ) {
     if ( file_exists( __DIR__ . "/functions/builderShortcodes.php" ) ) include(__DIR__ . "/functions/builderShortcodes.php");
 }
 
 if ( file_exists( __DIR__ . "/functions/deleteOldEvents.php" ) ) include(__DIR__ . "/functions/deleteOldEvents.php");
-if ( file_exists( __DIR__ . "/functions/createEvent.php" ) ) include(__DIR__ . "/functions/createEvent.php");
+if ( file_exists( __DIR__ . "/functions/createEvent.php" ) ) include(__DIR__ . "/functions/getHipsyEvents.php" );
 if ( file_exists( __DIR__ . "/functions/getHipsyEvents.php" ) ) include(__DIR__ . "/functions/getHipsyEvents.php");
 if ( file_exists( __DIR__ . "/functions/displaySettings.php" ) ) include(__DIR__ . "/functions/displaySettings.php");
 if ( file_exists( __DIR__ . "/functions/initSettings.php" ) ) include(__DIR__ . "/functions/initSettings.php");
@@ -63,32 +65,21 @@ if ( file_exists( __DIR__ . "/functions/blockGutenberg.php" ) ) include(__DIR__ 
 if ( file_exists( __DIR__ . "/functions/cronJob.php" ) ) include(__DIR__ . "/functions/cronJob.php");
 if ( file_exists( __DIR__ . "/functions/ajaxLoadMore.php" ) ) include(__DIR__ . "/functions/ajaxLoadMore.php");
 
-// Elementor integration (LEGACY - altijd laden)
 if ( file_exists( plugin_dir_path(__FILE__) . 'functions/elementorWidgets.php' ) ) {
     include_once plugin_dir_path(__FILE__) . 'functions/elementorWidgets.php';
 }
 
-// Elementor Dynamic Tags (ALTIJD laden - voor dropdown menu)
 if ( file_exists( plugin_dir_path(__FILE__) . 'integrations/elementor/elementor-dynamic-tags.php' ) ) {
     include_once plugin_dir_path(__FILE__) . 'integrations/elementor/elementor-dynamic-tags.php';
 }
 
-// Divi integration (ALTIJD laden - werkt alleen als Divi actief is)
 if ( file_exists( plugin_dir_path(__FILE__) . 'integrations/divi/divi-loader.php' ) ) {
     include_once plugin_dir_path(__FILE__) . 'integrations/divi/divi-loader.php';
 }
 
-// ══════════════════════════════════════════════════════
-// v4.0 FEATURES - Schakel in via admin settings
-// ══════════════════════════════════════════════════════
-// Ga naar: Dashboard → Events → Settings → v4.0 Features
-// ══════════════════════════════════════════════════════
-
 $v4_enabled = get_option('hipsy_events_v4_enabled', 0);
 
 if ( $v4_enabled ) {
-    
-    // Core systemen (v4.0)
     if ( file_exists( plugin_dir_path(__FILE__) . 'core/query-system.php' ) ) {
         include_once plugin_dir_path(__FILE__) . "core/query-system.php";
     }
@@ -101,12 +92,10 @@ if ( $v4_enabled ) {
         include_once plugin_dir_path(__FILE__) . "render/event-card.php";
     }
     
-    // v4.0 Extended shortcodes
     if ( file_exists( plugin_dir_path(__FILE__) . 'integrations/shortcodes/extended-shortcodes.php' ) ) {
         include_once plugin_dir_path(__FILE__) . 'integrations/shortcodes/extended-shortcodes.php';
     }
     
-    // v4.0 Elementor Filter Widget
     if ( file_exists( plugin_dir_path(__FILE__) . 'integrations/elementor/filter-bar-widget.php' ) ) {
         add_action( 'elementor/widgets/register', 'hipsy_register_v4_widgets' );
     }
