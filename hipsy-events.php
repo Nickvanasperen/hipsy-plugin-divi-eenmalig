@@ -10,11 +10,19 @@
  * Plugin Name:   Hipsy Events Builder
  * Plugin URI:    https://hipsy.nl
  * Description:   Professional event builder plugin voor WordPress. Builder-onafhankelijk met Elementor-first approach. Sync Hipsy events en creëer custom event designs met filters, responsive layouts en carousel support.
- * Version:       4.3.1
+ * Version:       4.3.2
  * Author:        How About Yes
  * Author URI:    https://howaboutyes.com
  * Text Domain:   hipsy-events
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+if ( ! defined( 'HIPSY_EVENTS_BUILDER_VERSION' ) ) {
+    define( 'HIPSY_EVENTS_BUILDER_VERSION', '4.3.2' );
+}
 
 // ══════════════════════════════════════════════════════
 // CORE INCLUDES - Basis functionaliteit (altijd actief)
@@ -49,7 +57,7 @@ if ( ! get_option('hipsy_events_v4_enabled', 0) ) {
 }
 
 if ( file_exists( __DIR__ . "/functions/deleteOldEvents.php" ) ) include(__DIR__ . "/functions/deleteOldEvents.php");
-if ( file_exists( __DIR__ . "/functions/createEvent.php" ) ) include(__DIR__ . "/functions/getHipsyEvents.php" );
+if ( file_exists( __DIR__ . "/functions/createEvent.php" ) ) include(__DIR__ . "/functions/createEvent.php" );
 if ( file_exists( __DIR__ . "/functions/getHipsyEvents.php" ) ) include(__DIR__ . "/functions/getHipsyEvents.php");
 if ( file_exists( __DIR__ . "/functions/displaySettings.php" ) ) include(__DIR__ . "/functions/displaySettings.php");
 if ( file_exists( __DIR__ . "/functions/initSettings.php" ) ) include(__DIR__ . "/functions/initSettings.php");
