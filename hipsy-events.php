@@ -1,27 +1,31 @@
 <?php
 
 /**
- * Hipsy Events Builder
+ * Hipsy-Plugin-Divi-Eenmalig
  *
  * @package       HIPSY
- * @author        How About Yes
+ * @author        Young Soul Business & How About Yes
  *
  * @wordpress-plugin
- * Plugin Name:   Hipsy Events Builder
+ * Plugin Name:   Hipsy-Plugin-Divi-Eenmalig
  * Plugin URI:    https://hipsy.nl
- * Description:   Professional event builder plugin voor WordPress. Builder-onafhankelijk met Elementor-first approach. Sync Hipsy events en creëer custom event designs met filters, responsive layouts en carousel support.
- * Version:       4.3.2
- * Author:        How About Yes
- * Author URI:    https://howaboutyes.com
- * Text Domain:   hipsy-events
+ * Description:   Divi plugin voor Hipsy Events. Eenmalige versie voor het stylen en tonen van Hipsy event grids in Divi.
+ * Version:       1.0.1
+ * Author:        Young Soul Business & How About Yes
+ * Author URI:    https://youngsoulbusiness.com
+ * Text Domain:   hipsy-plugin-divi-eenmalig
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+if ( ! defined( 'HIPSY_PLUGIN_DIVI_EENMALIG_VERSION' ) ) {
+    define( 'HIPSY_PLUGIN_DIVI_EENMALIG_VERSION', '1.0.1' );
+}
+
 if ( ! defined( 'HIPSY_EVENTS_BUILDER_VERSION' ) ) {
-    define( 'HIPSY_EVENTS_BUILDER_VERSION', '4.3.2' );
+    define( 'HIPSY_EVENTS_BUILDER_VERSION', HIPSY_PLUGIN_DIVI_EENMALIG_VERSION );
 }
 
 // ══════════════════════════════════════════════════════
