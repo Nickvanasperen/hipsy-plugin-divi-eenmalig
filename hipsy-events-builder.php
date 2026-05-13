@@ -1,4 +1,14 @@
 <?php
+/**
+ * Plugin Name: Hipsy Events Builder for Divi
+ * Plugin URI: https://github.com/Nickvanasperen/hipsy-plugin-divi-eenmalig
+ * Description: Divi modules voor het tonen en stylen van Hipsy events in WordPress.
+ * Version: 0.1.0
+ * Author: Young Soul Business
+ * Text Domain: hipsy-events-builder
+ * Domain Path: /languages
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
