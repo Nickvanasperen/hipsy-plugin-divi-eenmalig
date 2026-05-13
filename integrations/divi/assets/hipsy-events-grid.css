@@ -1,0 +1,60 @@
+.hipsy-events-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--hipsy-grid-columns, 3), minmax(0, 1fr));
+  gap: var(--hipsy-grid-gap, 24px);
+}
+
+.hipsy-event-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.hipsy-event-image img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.hipsy-event-content {
+  padding: 24px;
+}
+
+.hipsy-event-title {
+  margin: 8px 0;
+}
+
+.hipsy-event-date,
+.hipsy-event-time,
+.hipsy-event-location,
+.hipsy-event-tickets {
+  margin-bottom: 8px;
+}
+
+.hipsy-event-description {
+  margin-top: 12px;
+}
+
+.hipsy-event-button {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+@media (max-width: 980px) {
+  .hipsy-events-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .hipsy-events-grid {
+    grid-template-columns: 1fr;
+  }
+}
