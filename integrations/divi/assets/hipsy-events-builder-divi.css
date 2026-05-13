@@ -1,1 +1,280 @@
-.hipsy-test-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.hipsy-test-card{background:#fff;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.08);padding:24px}.hipsy-test-title{font-size:22px;font-weight:700;margin:0 0 12px}.hipsy-test-meta{margin-bottom:8px}
+/*
+ * Hipsy Events Builder - Divi card layout
+ *
+ * Deze CSS geeft de module een nette basis, maar zet vooral duidelijke selectors neer.
+ * Divi design controls of custom CSS kunnen ieder onderdeel los overschrijven.
+ */
+
+.hipsy-test-grid,
+.hipsy-divi-event-grid {
+  --hipsy-grid-columns: 3;
+  --hipsy-grid-gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(var(--hipsy-grid-columns), minmax(0, 1fr));
+  gap: var(--hipsy-grid-gap);
+  width: 100%;
+}
+
+.hipsy-test-card,
+.hipsy-divi-event-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #d9edf4;
+  border-radius: 16px;
+  box-shadow: none;
+  min-width: 0;
+}
+
+.hipsy-divi-event-image-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: #f5f7f8;
+}
+
+.hipsy-divi-event-image,
+.hipsy-divi-event-image-wrap img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.hipsy-divi-event-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 10px 18px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  background: linear-gradient(90deg, #399cc5 0%, #94109b 100%);
+}
+
+.hipsy-divi-event-category-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  padding: 7px 12px;
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background: #d46645;
+}
+
+.hipsy-divi-event-date-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  min-height: 66px;
+  padding: 8px 6px;
+  border-radius: 999px;
+  color: #073764;
+  line-height: 1;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .12);
+}
+
+.hipsy-divi-event-date-badge-dayname,
+.hipsy-divi-event-date-badge-month {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.hipsy-divi-event-date-badge-day {
+  margin: 3px 0;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.hipsy-divi-event-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 28px;
+}
+
+.hipsy-test-title,
+.hipsy-divi-event-title {
+  margin: 12px 0 16px;
+  color: #073764;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.hipsy-divi-event-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hipsy-test-meta,
+.hipsy-divi-event-date,
+.hipsy-divi-event-time,
+.hipsy-divi-event-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin: 0 0 8px;
+  color: #073764;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.hipsy-divi-event-date {
+  color: #3897ba;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.hipsy-divi-event-icon {
+  flex: 0 0 auto;
+  width: 1em;
+  height: 1em;
+  margin-top: .18em;
+  color: currentColor;
+}
+
+.hipsy-divi-event-price {
+  margin-top: auto;
+  padding-top: 18px;
+  color: #00855b;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.hipsy-divi-event-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.hipsy-divi-event-button,
+.hipsy-divi-event-button-info,
+.hipsy-divi-event-button-tickets {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 14px 24px;
+  border-radius: 9px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease;
+}
+
+.hipsy-divi-event-button:hover,
+.hipsy-divi-event-button-info:hover,
+.hipsy-divi-event-button-tickets:hover {
+  transform: translateY(-1px);
+}
+
+.hipsy-divi-event-button-info {
+  color: #073764;
+  background: #e9f8fc;
+}
+
+.hipsy-divi-event-button-tickets {
+  color: #ffffff;
+  background: #94109b;
+}
+
+.hipsy-divi-event-grid--list {
+  --hipsy-grid-columns: 1;
+}
+
+.hipsy-divi-event-grid--list .hipsy-divi-event-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 32%) minmax(0, 1fr);
+}
+
+.hipsy-divi-event-grid--list .hipsy-divi-event-image,
+.hipsy-divi-event-grid--list .hipsy-divi-event-image-wrap img {
+  height: 100%;
+  min-height: 220px;
+}
+
+.hipsy-divi-event-filters,
+.hipsy-divi-event-location-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 28px;
+}
+
+.hipsy-divi-event-filter-button,
+.hipsy-divi-event-location-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 9px 18px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  color: #0f6f36;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.hipsy-divi-event-filter-button.is-active,
+.hipsy-divi-event-location-button.is-active {
+  color: #ffffff;
+  background: #25793d;
+}
+
+@media (max-width: 980px) {
+  .hipsy-test-grid,
+  .hipsy-divi-event-grid {
+    --hipsy-grid-columns: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .hipsy-test-grid,
+  .hipsy-divi-event-grid {
+    --hipsy-grid-columns: 1;
+  }
+
+  .hipsy-divi-event-grid--list .hipsy-divi-event-card {
+    display: flex;
+  }
+
+  .hipsy-divi-event-content {
+    padding: 22px;
+  }
+
+  .hipsy-divi-event-title {
+    font-size: 26px;
+  }
+
+  .hipsy-divi-event-date {
+    font-size: 18px;
+  }
+}
